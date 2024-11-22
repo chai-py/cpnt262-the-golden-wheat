@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const express = require("express");
+require("dotenv").config();     
 
-const uri = "mongodb+srv://erchaital123:Sait092024@cluster0.206yd.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const app = express()
 
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connection successful"))
   .catch((error) => console.error("MongoDB connection error:", error));
