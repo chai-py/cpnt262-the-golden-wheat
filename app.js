@@ -24,6 +24,10 @@ app.use("/products", productRoutes);
 app.use("/orderRoute", orderRoutes);
 app.use("/userAuthRoute", userAuthRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to th Node.js Server!");
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
