@@ -1,0 +1,18 @@
+const validateUserInput = (req, res, next) => {
+  const { name, email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+   // For registration, validate name and password strength
+   if (req.path === "/register") {
+    if (!name) {
+      return res.status(400).json({ message: "Name is required for registration" });
+    }
+  if (password.length < 8) {
+    return res.status(400).json({ message: 'Password must be at least 8 characters long' });
+  }
+}
+  next();
+};
+
+module.exports = { validateUserInput };

@@ -21,12 +21,18 @@ const userAuthRoutes = require("./routes/userAuthRoute");
 
 // Use product routes
 app.use("/products", productRoutes);
-app.use("/orderRoute", orderRoutes);
-app.use("/userAuthRoute", userAuthRoutes);
+app.use("/orders", orderRoutes);
+app.use("/users", userAuthRoutes);
+
+// Import middleware
+const { errorHandler } = require("./middleware/errorHandler");
 
 app.get("/", (req, res) => {
   res.send("Welcome to th Node.js Server!");
 });
+
+// Global error handling middleware (last middleware)
+// app.use(errorHandler);
 
 // Start the server
 app.listen(port, () => {

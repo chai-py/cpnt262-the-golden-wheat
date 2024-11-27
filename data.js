@@ -1,32 +1,39 @@
 const mongoose = require("mongoose");
-const Product = require("./models/productsmodel");
+const Order = require("./models/orderModel");
 require("dotenv").config();
 
 const seedData = [
   {
-    name: "Product 1",
-    category: "Category 1",
-    description: "Description for Product 1",
-    ingredients: "Ingredient 1, Ingredient 2",
-    imageUrl: "http://example.com/image1.jpg",
-    price: 10.99,
+    "user": "60c72b2f9e1b8b001c8a1f28", // Replace with a valid User ObjectId
+    "products": [
+      {
+        "product": "60c72b2f9e1b8b001c8a1f30", // Replace with a valid Product ObjectId
+        "quantity": 2
+      },
+      {
+        "product": "60c72b2f9e1b8b001c8a1f31", // Replace with another valid Product ObjectId
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 150,
+    "status": "Pending", // Could be 'Pending', 'Processing', 'Shipped', or 'Delivered'
   },
-  {
-    name: "Product 2",
-    category: "Category 2",
-    description: "Description for Product 2",
-    ingredients: "Ingredient A, Ingredient B",
-    imageUrl: "http://example.com/image2.jpg",
-    price: 15.49,
-  },
-  {
-    name: "Product 3",
-    category: "Category 3",
-    description: "Description for Product 3",
-    ingredients: "Ingredient X, Ingredient Y",
-    imageUrl: "http://example.com/image3.jpg",
-    price: 8.99,
-  },
+//   {
+//     name: "Rye Bread",
+//     category: "Category 2",
+//     description: "Description for Product 2",
+//     ingredients: "Ingredient A, Ingredient B",
+//     imageUrl: "http://example.com/image2.jpg",
+//     price: 15.49,
+//   },
+//   {
+//     name: "Multigrain Bread",
+//     category: "Category 3",
+//     description: "Description for Product 3",
+//     ingredients: "Ingredient X, Ingredient Y",
+//     imageUrl: "http://example.com/image3.jpg",
+//     price: 8.99,
+//   },
 ];
 
 const seedDatabase = async () => {
@@ -37,11 +44,11 @@ const seedDatabase = async () => {
     console.log("Connected to MongoDB");
 
     // Clear the collection
-    await Product.deleteMany();
+    await Order.deleteMany();
     console.log("Products collection cleared");
 
     // Insert seed data
-    await Product.insertMany(seedData);
+    await Order.insertMany(seedData);
     console.log("Seed data inserted successfully");
 
     // Close the connection
