@@ -21,8 +21,8 @@ const userAuthRoutes = require("./routes/userAuthRoute");
 
 // Use product routes
 app.use("/products", productRoutes);
-app.use("/orders", orderRoutes);
-app.use("/users", userAuthRoutes);
+app.use("/order", orderRoutes);
+app.use("/user", userAuthRoutes);
 
 // Import middleware
 const { errorHandler } = require("./middleware/errorHandler");

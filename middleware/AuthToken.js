@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/userAuthModel');
 
-const authenticateToken = (req, res, next) => {
+const protectToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1];
   if (!token) {
     return res.status(401).json({ message: "Access denied, token missing" });
@@ -16,4 +16,4 @@ const authenticateToken = (req, res, next) => {
   }
 };
 
-module.exports = { authenticateToken };
+module.exports = { protectToken };
