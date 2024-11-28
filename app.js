@@ -8,7 +8,7 @@ const port = process.env.PORT || 4000;
 // Middleware to parse JSON
 app.use(express.json());
 
-// Connect to MongoDB Atlasdxxx
+// Connect to MongoDB Atlas
 mongoose
   .connect(process.env.MONGO_URI, { serverSelectionTimeoutMS: 30000 })
   .then(() => console.log("MongoDB connection successful"))
