@@ -4,36 +4,38 @@ require("dotenv").config();
 
 const seedData = [
   {
-    "user": "60c72b2f9e1b8b001c8a1f28", // Replace with a valid User ObjectId
-    "products": [
+    user: "60c72b2f9e1b8b001c8a1f28", // Replace with a valid User ObjectId
+    products: [
       {
-        "product": "60c72b2f9e1b8b001c8a1f30", // Replace with a valid Product ObjectId
-        "quantity": 2
+        product: "60c72b2f9e1b8b001c8a1f30", // Replace with a valid Product ObjectId
+        quantity: 2,
+        price: 2.99,
       },
       {
-        "product": "60c72b2f9e1b8b001c8a1f31", // Replace with another valid Product ObjectId
-        "quantity": 1
-      }
+        product: "60c72b2f9e1b8b001c8a1f31", // Replace with another valid Product ObjectId
+        quantity: 1,
+        price: 3.99,
+      },
     ],
-    "totalAmount": 150,
-    "status": "Pending", // Could be 'Pending', 'Processing', 'Shipped', or 'Delivered'
+    totalAmount: 150,
+    status: "Pending", // Could be 'Pending', 'Processing', 'Shipped', or 'Delivered'
   },
-//   {
-//     name: "Rye Bread",
-//     category: "Category 2",
-//     description: "Description for Product 2",
-//     ingredients: "Ingredient A, Ingredient B",
-//     imageUrl: "http://example.com/image2.jpg",
-//     price: 15.49,
-//   },
-//   {
-//     name: "Multigrain Bread",
-//     category: "Category 3",
-//     description: "Description for Product 3",
-//     ingredients: "Ingredient X, Ingredient Y",
-//     imageUrl: "http://example.com/image3.jpg",
-//     price: 8.99,
-//   },
+  //   {
+  //     name: "Rye Bread",
+  //     category: "Category 2",
+  //     description: "Description for Product 2",
+  //     ingredients: "Ingredient A, Ingredient B",
+  //     imageUrl: "http://example.com/image2.jpg",
+  //     price: 15.49,
+  //   },
+  //   {
+  //     name: "Multigrain Bread",
+  //     category: "Category 3",
+  //     description: "Description for Product 3",
+  //     ingredients: "Ingredient X, Ingredient Y",
+  //     imageUrl: "http://example.com/image3.jpg",
+  //     price: 8.99,
+  //   },
 ];
 
 const seedDatabase = async () => {
