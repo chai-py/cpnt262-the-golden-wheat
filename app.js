@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
+const compression = require('compression');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -14,6 +15,7 @@ const port = process.env.PORT || 4000;
 //     credentials: true, // Allow cookies if needed
 //   })
 // );
+app.use(compression()); // Enable compression middleware
 
 // Allow all origins
 app.use(cors());
