@@ -22,7 +22,7 @@ router.post("/login", userAuthController.loginUser);
 router.get("/profile", protectToken, userAuthController.getUserProfile);
 
 
-
+  
   router.get("/",protectToken, getAllUsers); // Protect the route for fetching all users
   router.post("/", createUser); // Don't protect this route (public access)
   router.get("/:id", getUserById); // Protect the route for fetching a user by ID

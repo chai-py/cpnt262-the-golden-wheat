@@ -1,9 +1,22 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cors = require("cors");
 
 const app = express();
 const port = process.env.PORT || 4000;
+
+// // Enable CORS
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // Allow requests from this origin
+//     methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+//     credentials: true, // Allow cookies if needed
+//   })
+// );
+
+// Allow all origins
+app.use(cors());
 
 // Middleware to parse JSON
 app.use(express.json());
