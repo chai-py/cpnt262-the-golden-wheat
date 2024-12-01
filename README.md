@@ -2,7 +2,12 @@
 
 For Front End Dev's :
 
-Products API Key : http://localhost:4000/products
+Products API Key : 
+http://localhost:4000/products
+http://localhost:4000/user/login
+http://localhost:4000/user/registration
+http://localhost:4000/order
+
 Steps to follow:
 1.	Clone my repo to your local environment: https://github.com/chai-py/cpnt262-the-golden-wheat
 Command : git clone https://github.com/chai-py/cpnt262-the-golden-wheat
