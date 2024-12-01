@@ -36,7 +36,7 @@ exports.loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    // Generate a JWT
+    // Generate a token
     const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "15m" });
     res.status(200).json({ message: "Login successful", token });
   } catch (error) {
@@ -44,7 +44,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
-// Get user profile (protected route)
+// Get user profile
 exports.getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id);

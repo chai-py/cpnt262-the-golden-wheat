@@ -21,26 +21,6 @@ const createMultipleUsers = () => {
       email: "chai1@goldenbakery.ca",
       password: "password1234",
     },
-    // {
-    //     name: "Aashita123",
-    //     email: "ash@goldenbakery.ca",
-    //     password: "password1234",
-    //   },
-    //   {
-    //     name: "Ethan123",
-    //     email: "ethan@goldenbakery.ca",
-    //     password: "password1234",
-    //   },
-    //   {
-    //     name: "Shiela123",
-    //     email: "shiela@goldenbakery.ca",
-    //     password: "password1234",
-    //   },
-    //   {
-    //     name: "Moksham123",
-    //     email: "mo@goldenbakery.ca",
-    //     password: "password1234",
-    //   }
   ];
   users.forEach((user) => createTestUser(user));
 };

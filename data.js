@@ -4,15 +4,15 @@ require("dotenv").config();
 
 const seedData = [
   {
-    user: "60c72b2f9e1b8b001c8a1f28", // Replace with a valid User ObjectId
+    user: "60c72b2f9e1b8b001c8a1f28",
     products: [
       {
-        product: "60c72b2f9e1b8b001c8a1f30", // Replace with a valid Product ObjectId
+        product: "60c72b2f9e1b8b001c8a1f30",
         quantity: 2,
         price: 2.99,
       },
       {
-        product: "60c72b2f9e1b8b001c8a1f31", // Replace with another valid Product ObjectId
+        product: "60c72b2f9e1b8b001c8a1f31",
         quantity: 1,
         price: 3.99,
       },
@@ -20,22 +20,6 @@ const seedData = [
     totalAmount: 150,
     status: "Pending", // Could be 'Pending', 'Processing', 'Shipped', or 'Delivered'
   },
-  //   {
-  //     name: "Rye Bread",
-  //     category: "Category 2",
-  //     description: "Description for Product 2",
-  //     ingredients: "Ingredient A, Ingredient B",
-  //     imageUrl: "http://example.com/image2.jpg",
-  //     price: 15.49,
-  //   },
-  //   {
-  //     name: "Multigrain Bread",
-  //     category: "Category 3",
-  //     description: "Description for Product 3",
-  //     ingredients: "Ingredient X, Ingredient Y",
-  //     imageUrl: "http://example.com/image3.jpg",
-  //     price: 8.99,
-  //   },
 ];
 
 const seedDatabase = async () => {
@@ -58,7 +42,7 @@ const seedDatabase = async () => {
     console.log("MongoDB connection closed");
   } catch (error) {
     console.error("Error seeding database:", error.message);
-    process.exit(1); // Exit with failure
+    process.exit(1);
   }
 };
 
