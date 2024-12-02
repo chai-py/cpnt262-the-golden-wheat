@@ -35,7 +35,7 @@ Step-by-step guide on how to install and set up the Golden Wheat project on a lo
 
 - http://localhost:4000/products
 - http://localhost:4000/user/login
-- http://localhost:4000/user/registration
+- http://localhost:4000/user/register
 - http://localhost:4000/order
 
 Add these endpoints to the frontend environment to fetch and display data as needed.
