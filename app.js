@@ -2,19 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
-const compression = require('compression');
+const compression = require("compression");
 
 const app = express();
 const port = process.env.PORT || 4000;
 
-// // Enable CORS
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000", // Allow requests from this origin
-//     methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
-//     credentials: true, // Allow cookies if needed
-//   })
-// );
 app.use(compression()); // Enable compression middleware
 
 // Allow all origins
@@ -45,9 +37,6 @@ const { errorHandler } = require("./middleware/errorHandler");
 app.get("/", (req, res) => {
   res.send("Welcome to th Node.js Server!");
 });
-
-// Global error handling middleware (last middleware)
-// app.use(errorHandler);
 
 // Start the server
 app.listen(port, () => {
